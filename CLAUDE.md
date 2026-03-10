@@ -227,6 +227,34 @@ response = client.messages.create(
 
 ---
 
+## Built-in Skills Documentation
+
+ClaudIA leverages Claude Code's **native tools** without requiring third-party APIs. Each skill is documented in `docs/skills/`:
+
+| Skill | File | Descripción |
+|-------|------|-------------|
+| Web Research | `docs/skills/web-research.md` | Búsqueda web + extracción de contenido de URLs |
+| File Operations | `docs/skills/file-ops.md` | Leer, escribir, editar, buscar archivos |
+| Code Execution | `docs/skills/code-execution.md` | Scripts Python, automatizaciones shell |
+| Content Creation | `docs/skills/content-creation.md` | Propuestas, emails, posts, materiales de curso |
+| Data Analysis | `docs/skills/data-analysis.md` | Análisis de CSV/JSON, informes ejecutivos |
+| Agent Orchestration | `docs/skills/agent-orchestration.md` | Sub-agentes paralelos para tareas complejas |
+| Git Operations | `docs/skills/git-operations.md` | Versionado documental, historial, recuperación |
+
+## CEO Task Menu
+
+For autonomous business operation tasks targeted at a small training/education company CEO, see:
+
+**`docs/ceo-menu.md`** — 20 ready-to-use task prompts covering:
+- Commercial & Sales (propuestas, pipeline, análisis)
+- Marketing & Communication (calendario editorial, newsletters, LinkedIn)
+- Operations & Management (informes, OKRs, onboarding)
+- Product & Training (diseño de cursos, actualización de materiales)
+- Finance & Administration (facturación, rentabilidad, gestoría)
+- Strategy & Growth (captación, DAFO, planificación)
+
+---
+
 ## References
 
 - [Anthropic API Docs](https://docs.anthropic.com)

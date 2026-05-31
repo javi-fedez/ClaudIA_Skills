@@ -1,3 +1,8 @@
+---
+name: comms-content-creation
+description: Redacta y estructura documentos profesionales (propuestas, emails, posts, materiales de curso) sin herramientas externas. Úsalo cuando se pida crear o dar formato a contenido escrito profesional.
+---
+
 # Skill: Creación de Contenido
 
 Capacidad nativa de ClaudIA para redactar, estructurar y generar cualquier tipo de documento profesional sin herramientas externas.

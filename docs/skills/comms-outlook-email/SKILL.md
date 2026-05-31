@@ -1,3 +1,8 @@
+---
+name: comms-outlook-email
+description: Consulta, busca, lee, responde y envía correos vía el servidor MCP de Outlook 365 (Microsoft Graph). Úsalo para gestionar el email de Outlook/M365. Nunca envía sin confirmación explícita del usuario.
+---
+
 # Skill: Gestión de Correo Outlook (MCP)
 
 Skill completo para consultar, buscar, leer, contestar y enviar correos electrónicos

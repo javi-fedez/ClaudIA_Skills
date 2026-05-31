@@ -1,3 +1,8 @@
+---
+name: research-notebooklm
+description: Conecta con Google NotebookLM de forma programática para crear y consultar notebooks y generar contenido. Úsalo para tareas de research basadas en NotebookLM.
+---
+
 # Skill: NotebookLM — Consultas, Generación de Contenido y Automatización
 
 Skill completo para conectarse a Google NotebookLM de forma programática usando

@@ -1,3 +1,8 @@
+---
+name: seo-keyword-research
+description: Investiga y prioriza palabras clave para un tema y sitio destino. Úsalo antes de redactar contenido SEO.
+---
+
 # Skill: SEO Keyword Research
 
 Investiga y prioriza palabras clave para un tema dado, adaptadas al perfil de la marca y sus dos sitios web (sitio-1.example.com y sitio-2.example.com).

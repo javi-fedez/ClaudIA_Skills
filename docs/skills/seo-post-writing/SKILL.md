@@ -1,3 +1,8 @@
+---
+name: seo-post-writing
+description: Redacta un post de blog optimizado para SEO a partir de un brief, con metadatos. Úsalo para escribir el contenido del artículo.
+---
+
 # Skill: SEO Post Writing
 
 Redacta un post de blog completamente optimizado para SEO a partir de un brief, usando la voz y estilo de la marca.

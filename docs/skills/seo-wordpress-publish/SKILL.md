@@ -1,3 +1,8 @@
+---
+name: seo-wordpress-publish
+description: Publica un post como borrador en WordPress vía REST API con todos los metadatos SEO. Úsalo para subir el draft; nunca publica directamente.
+---
+
 # Skill: SEO WordPress Publish
 
 Publica un post como borrador en WordPress via REST API, con todos los metadatos SEO correctamente configurados. Nunca publica directamente — siempre crea un draft para revisión manual.

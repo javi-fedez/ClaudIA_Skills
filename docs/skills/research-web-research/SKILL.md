@@ -1,3 +1,8 @@
+---
+name: research-web-research
+description: Busca en internet y extrae información de páginas web sin APIs de terceros. Úsalo para investigación web y extracción de contenido de URLs.
+---
+
 # Skill: Web Research
 
 Capacidad nativa de ClaudIA para buscar en internet y extraer información de páginas web **sin necesidad de APIs de terceros**.

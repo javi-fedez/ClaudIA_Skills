@@ -1,3 +1,8 @@
+---
+name: comms-email-triage
+description: Lee correos no leídos, filtra publicidad y newsletters, y genera un resumen accionable. Úsalo para revisar y priorizar la bandeja de entrada.
+---
+
 # Skill: Email Triage & Auto-Draft
 
 Automatically reads unread emails, filters out ads and newsletters, and generates

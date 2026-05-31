@@ -1,3 +1,8 @@
+---
+name: dev-file-ops
+description: Lee, escribe, edita y busca archivos en el sistema local. Úsalo para cualquier manipulación de archivos.
+---
+
 # Skill: Operaciones de Archivos
 
 Capacidad nativa de ClaudIA para leer, escribir, editar y buscar archivos en el sistema local.

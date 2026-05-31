@@ -1,3 +1,8 @@
+---
+name: dev-agent-orchestration
+description: Lanza sub-agentes especializados en paralelo, delega tareas complejas y combina sus resultados. Úsalo para descomponer tareas grandes que conviene paralelizar.
+---
+
 # Skill: Orquestación de Agentes
 
 Capacidad de ClaudIA para lanzar **sub-agentes especializados en paralelo**, delegar tareas complejas y combinar sus resultados — todo sin APIs externas.

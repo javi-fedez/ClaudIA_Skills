@@ -1,3 +1,8 @@
+---
+name: dev-code-execution
+description: Ejecuta comandos de shell, scripts Python y automatiza tareas del sistema operativo. Úsalo cuando haya que ejecutar código o automatizar el sistema.
+---
+
 # Skill: Ejecución de Código y Automatización
 
 Capacidad nativa de ClaudIA para ejecutar comandos de shell, scripts Python, y automatizar tareas del sistema operativo.

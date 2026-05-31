@@ -1,3 +1,8 @@
+---
+name: ops-calendar
+description: Consulta, crea, modifica y elimina eventos del calendario (Outlook/M365). Úsalo para gestionar la agenda. Confirmar siempre antes de eliminar un evento.
+---
+
 # Skill: Gestión de Agenda (MCP Calendar)
 
 Skill completo para consultar, crear, modificar y eliminar eventos del calendario

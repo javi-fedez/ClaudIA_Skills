@@ -1,3 +1,8 @@
+---
+name: ops-publish-content
+description: Publica archivos generados (HTML, PDF, imágenes, docs) en el servidor nginx y devuelve una URL pública. Úsalo para compartir un archivo mediante enlace.
+---
+
 # Skill: Publicar contenido en el servidor de archivos públicos
 
 Publica archivos generados (HTML, PDF, imágenes, docs) en el servidor nginx del VPS

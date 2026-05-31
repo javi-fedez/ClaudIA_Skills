@@ -1,3 +1,8 @@
+---
+name: research-data-analysis
+description: Lee, procesa e interpreta datos de negocio (CSV/JSON) usando Python nativo. Úsalo para análisis de datos e informes ejecutivos sin BI externo.
+---
+
 # Skill: Análisis de Datos
 
 Capacidad de ClaudIA para leer, procesar e interpretar datos de negocio usando Python nativo — sin necesidad de BI externo.

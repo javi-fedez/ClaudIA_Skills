@@ -229,17 +229,17 @@ response = client.messages.create(
 
 ## Built-in Skills Documentation
 
-ClaudIA leverages Claude Code's **native tools** without requiring third-party APIs. Each skill is documented in `docs/skills/`:
+ClaudIA leverages Claude Code's **native tools** without requiring third-party APIs. Cada skill vive en su propia carpeta dentro de `docs/skills/<nombre>/skill.md`:
 
 | Skill | File | Descripción |
 |-------|------|-------------|
-| Web Research | `docs/skills/web-research.md` | Búsqueda web + extracción de contenido de URLs |
-| File Operations | `docs/skills/file-ops.md` | Leer, escribir, editar, buscar archivos |
-| Code Execution | `docs/skills/code-execution.md` | Scripts Python, automatizaciones shell |
-| Content Creation | `docs/skills/content-creation.md` | Propuestas, emails, posts, materiales de curso |
-| Data Analysis | `docs/skills/data-analysis.md` | Análisis de CSV/JSON, informes ejecutivos |
-| Agent Orchestration | `docs/skills/agent-orchestration.md` | Sub-agentes paralelos para tareas complejas |
-| Git Operations | `docs/skills/git-operations.md` | Versionado documental, historial, recuperación |
+| Web Research | `docs/skills/web-research/skill.md` | Búsqueda web + extracción de contenido de URLs |
+| File Operations | `docs/skills/file-ops/skill.md` | Leer, escribir, editar, buscar archivos |
+| Code Execution | `docs/skills/code-execution/skill.md` | Scripts Python, automatizaciones shell |
+| Content Creation | `docs/skills/content-creation/skill.md` | Propuestas, emails, posts, materiales de curso |
+| Data Analysis | `docs/skills/data-analysis/skill.md` | Análisis de CSV/JSON, informes ejecutivos |
+| Agent Orchestration | `docs/skills/agent-orchestration/skill.md` | Sub-agentes paralelos para tareas complejas |
+| Git Operations | `docs/skills/git-operations/skill.md` | Versionado documental, historial, recuperación |
 
 ## CEO Task Menu
 

@@ -1,12 +1,14 @@
 ---
 name: comms-email-triage
-description: Lee correos no leídos, filtra publicidad y newsletters, y genera un resumen accionable. Úsalo para revisar y priorizar la bandeja de entrada.
+description: Lee correos no leídos, filtra publicidad y newsletters, y genera borradores de respuesta solo para los que requieren atención humana. Úsalo para revisar y priorizar la bandeja de entrada. Nunca envía correos automáticamente.
 ---
 
-# Skill: Email Triage & Auto-Draft
+# Skill: Triage de Correo y Auto-Borradores
 
-Automatically reads unread emails, filters out ads and newsletters, and generates
-reply drafts for emails that require a response.
+Lee automáticamente los correos no leídos, filtra publicidad y newsletters, y genera
+borradores de respuesta para los correos que requieren contestación.
+
+---
 
 ## Trigger phrases
 - "revisa mi correo"
@@ -15,63 +17,67 @@ reply drafts for emails that require a response.
 - "triage de email"
 - "/email-triage"
 
+---
+
 ## Workflow
 
-Execute these steps in order:
+Ejecutar estos pasos en orden:
 
-### Step 1 — List unread emails
-Call `outlook_list_unread` with:
+### Paso 1 — Listar correos no leídos
+Llamar a `outlook_list_unread` con:
 - `limit`: 50
 - `folder`: "inbox"
 - `response_format`: "json"
 
-### Step 2 — Classify each email
-For each email in the list, classify it as one of:
-- **SKIP** — advertising, newsletter, promotional, notification, noreply, automated system message
-- **DRAFT** — requires a human reply (question, request, follow-up, client/colleague email)
+### Paso 2 — Clasificar cada correo
+Para cada correo de la lista, clasificarlo como uno de:
+- **SKIP** — publicidad, newsletter, promoción, notificación, noreply, mensaje automático del sistema
+- **DRAFT** — requiere respuesta humana (pregunta, petición, seguimiento, correo de cliente/colega)
 
-Classification rules (check in order):
-1. SKIP if `from_email` contains: `noreply`, `no-reply`, `donotreply`, `notifications`, `mailer`, `newsletter`, `marketing`, `info@`, `updates@`, `alerts@`
-2. SKIP if `subject` matches (case-insensitive): `unsubscribe`, `newsletter`, `oferta`, `descuento`, `promoción`, `sale`, `% off`, `deal`, `digest`, `weekly`, `monthly`, `resumen semanal`, `your receipt`, `invoice #`, `order confirmation`, `shipping notification`, `tracking`
-3. SKIP if `bodyPreview` starts with typical automated phrases: `You are receiving this`, `This is an automated`, `Este es un mensaje automático`
-4. DRAFT if the email comes from a known person (name visible in `from_name` and not a brand/company)
-5. DRAFT if the subject is a direct question, reply, or action request
+Reglas de clasificación (revisar en orden):
+1. SKIP si `from_email` contiene: `noreply`, `no-reply`, `donotreply`, `notifications`, `mailer`, `newsletter`, `marketing`, `info@`, `updates@`, `alerts@`
+2. SKIP si `subject` coincide (sin distinguir mayúsculas): `unsubscribe`, `newsletter`, `oferta`, `descuento`, `promoción`, `sale`, `% off`, `deal`, `digest`, `weekly`, `monthly`, `resumen semanal`, `your receipt`, `invoice #`, `order confirmation`, `shipping notification`, `tracking`
+3. SKIP si `bodyPreview` empieza por frases automáticas típicas: `You are receiving this`, `This is an automated`, `Este es un mensaje automático`
+4. DRAFT si el correo viene de una persona conocida (nombre visible en `from_name`, no una marca/empresa)
+5. DRAFT si el asunto es una pregunta directa, una respuesta o una petición de acción
 
-### Step 3 — Read full content of DRAFT emails
-For each email classified as DRAFT:
-- Call `outlook_read_email` with `email_id` and `include_html: false`
-- Read the full body to understand context and tone
+### Paso 3 — Leer el contenido completo de los correos DRAFT
+Para cada correo clasificado como DRAFT:
+- Llamar a `outlook_read_email` con `email_id` e `include_html: false`
+- Leer el cuerpo completo para entender contexto y tono
 
-### Step 4 — Generate draft reply
-For each DRAFT email, generate a professional reply in the **same language as the original email** that:
-- Acknowledges the main point or question
-- Provides a helpful, concise response or asks for clarification if needed
-- Maintains a professional but warm tone
-- Does NOT commit to specific dates/prices/decisions without user review
-- Ends with an appropriate closing
+### Paso 4 — Generar el borrador de respuesta
+Para cada correo DRAFT, generar una respuesta profesional en **el mismo idioma que el correo original** que:
+- Reconozca el punto principal o la pregunta
+- Aporte una respuesta útil y concisa, o pida aclaración si hace falta
+- Mantenga un tono profesional pero cercano
+- NO comprometa fechas/precios/decisiones concretas sin revisión del usuario
+- Termine con un cierre apropiado
 
-Then call `outlook_create_draft` with:
-- `reply_to_id`: the original email ID
-- `body`: the generated reply text
+Después llamar a `outlook_create_draft` con:
+- `reply_to_id`: el ID del correo original
+- `body`: el texto de la respuesta generada
 - `body_type`: "text"
-- `to`: leave empty (inherited from reply)
+- `to`: dejar vacío (se hereda de la respuesta)
 
-### Step 5 — Report results
-After processing all emails, output a summary table:
+### Paso 5 — Reportar resultados
+Tras procesar todos los correos, mostrar una tabla resumen:
 
-```
-## Email Triage Summary
+```markdown
+## Resumen de Triage de Correo
 
-| # | From | Subject | Classification | Draft |
+| # | De | Asunto | Clasificación | Borrador |
 |---|------|---------|---------------|-------|
 | 1 | ... | ... | SKIP (newsletter) | — |
-| 2 | ... | ... | DRAFT | ✅ created |
+| 2 | ... | ... | DRAFT | ✅ creado |
 
-Processed: X emails | Skipped: Y | Drafts created: Z
+Procesados: X correos | Ignorados: Y | Borradores creados: Z
 ```
 
-## Notes
-- Never send emails automatically — always create DRAFT, never call `outlook_send_email`
-- If classification is ambiguous, default to DRAFT (better safe than skip)
-- If the original email is a thread, use `outlook_get_thread` to get full context before drafting
-- Always report which emails were skipped and why
+---
+
+## Notas de seguridad
+- **Nunca enviar correos automáticamente** — crear siempre un borrador (`outlook_create_draft`), nunca llamar a `outlook_send_email`.
+- Si la clasificación es ambigua, optar por DRAFT (mejor prevenir que ignorar algo importante).
+- Si el correo original es un hilo, usar `outlook_get_thread` para obtener todo el contexto antes de redactar.
+- Reportar siempre qué correos se ignoraron y por qué.

@@ -9,6 +9,15 @@ Capacidad nativa de ClaudIA para ejecutar comandos de shell, scripts Python, y a
 
 ---
 
+## Trigger phrases
+- "ejecuta este script"
+- "calcula [algo] a partir de [archivo]"
+- "convierte [archivo] a [formato]"
+- "automatiza [tarea] del sistema"
+- "/code-execution"
+
+---
+
 ## Herramienta disponible
 
 | Herramienta | Función |
@@ -96,11 +105,13 @@ EOF
 
 ---
 
-## Limitaciones
+## Notas de seguridad y limitaciones
 
-- Los comandos ejecutan en el entorno local del usuario
-- No usar para operaciones destructivas sin confirmar primero (`rm -rf`, drops de DB, etc.)
-- Los scripts con credenciales deben leer de `.env`, nunca hardcoded
+- Los comandos se ejecutan en el entorno local del usuario.
+- **No usar para operaciones destructivas sin confirmar primero** (`rm -rf`, `DROP`, sobrescritura masiva, etc.).
+- Los scripts con credenciales deben leer de `.env`, **nunca** hardcodearlas.
+- Validar las rutas y los datos de entrada antes de procesarlos en bucle.
+- Preferir operaciones idempotentes (que se puedan repetir sin efectos secundarios).
 
 ---
 

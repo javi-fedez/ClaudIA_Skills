@@ -9,6 +9,16 @@ Capacidad nativa de ClaudIA para redactar, estructurar y generar cualquier tipo 
 
 ---
 
+## Trigger phrases
+- "redacta una propuesta para [cliente]"
+- "escribe un email de seguimiento"
+- "crea un post para LinkedIn sobre [tema]"
+- "diseña el temario de un curso de [tema]"
+- "prepara el calendario editorial de [mes]"
+- "/content-creation"
+
+---
+
 ## Tipos de contenido que ClaudIA genera directamente
 
 ### Documentos comerciales

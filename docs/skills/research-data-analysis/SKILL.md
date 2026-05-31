@@ -9,6 +9,16 @@ Capacidad de ClaudIA para leer, procesar e interpretar datos de negocio usando P
 
 ---
 
+## Trigger phrases
+- "analiza las ventas de [periodo]"
+- "genera un informe ejecutivo de [datos]"
+- "calcula la tasa de conversión / facturación / NPS"
+- "compara [periodo A] con [periodo B]"
+- "haz un dashboard de [métricas]"
+- "/data-analysis"
+
+---
+
 ## Herramientas combinadas
 
 | Herramienta | Rol |
@@ -151,3 +161,10 @@ Genera un informe ejecutivo de Q1 2026 que incluya:
 
 Guarda el informe en /informes/q1_2026_ejecutivo.md
 ```
+
+---
+
+## Notas de seguridad
+- No exponer datos personales de clientes/alumnos en informes que se vayan a compartir; agregar o anonimizar cuando proceda.
+- Verificar los datos de entrada (filas vacías, formatos de fecha, importes no numéricos) antes de calcular métricas.
+- Indicar siempre el periodo y la fuente de los datos en el informe para que sea auditable.

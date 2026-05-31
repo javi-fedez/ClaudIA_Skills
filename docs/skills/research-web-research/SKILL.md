@@ -9,6 +9,16 @@ Capacidad nativa de ClaudIA para buscar en internet y extraer información de p�
 
 ---
 
+## Trigger phrases
+- "investiga [tema] en internet"
+- "busca las tendencias de [sector] en [año]"
+- "analiza la web / precios de [competidor]"
+- "qué novedades hay sobre [tema]"
+- "extrae el contenido de [URL]"
+- "/web-research"
+
+---
+
 ## Herramientas disponibles
 
 | Herramienta | Función | Cuándo usarla |
@@ -67,11 +77,12 @@ Pasos:
 
 ---
 
-## Limitaciones
+## Limitaciones y notas
 
-- Solo disponible en región US (WebSearch)
-- WebFetch no puede acceder a páginas que requieren login
-- Para PDFs de más de 10 páginas usar parámetro `pages`
+- `WebSearch` solo está disponible en la región US.
+- `WebFetch` no puede acceder a páginas que requieren login.
+- Para PDFs de más de 10 páginas usar el parámetro `pages`.
+- **Citar siempre las fuentes** y no inventar datos: si la búsqueda no confirma un dato, indicarlo en lugar de suponerlo.
 
 ---
 

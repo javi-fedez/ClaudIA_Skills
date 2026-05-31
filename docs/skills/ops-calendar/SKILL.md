@@ -149,7 +149,7 @@ calendar_update_event(
 // Cambiar título y descripción
 calendar_update_event(
   event_id: "AAMkAGFlMDdk...",
-  subject:  "Reunión de seguimiento Biogen",
+  subject:  "Reunión de seguimiento con cliente",
   body:     "Sesión de seguimiento post-taller."
 )
 
@@ -206,9 +206,9 @@ calendar_list_events(
 
 | Día | Hora | Evento | Lugar |
 |-----|------|--------|-------|
-| Lun 16 | 10:00–11:00 | Reunión Biogen | Teams |
-| Mié 18 | 15:00–16:00 | Clase Vibe Coding II | The Valley |
-| Jue 19 | 🗓️ Todo el día | Día de San José (festivo) | — |
+| Lun 16 | 10:00–11:00 | Reunión con cliente | Teams |
+| Mié 18 | 15:00–16:00 | Sesión de formación | Aula / online |
+| Jue 19 | 🗓️ Todo el día | Festivo local | — |
 ```
 
 ---

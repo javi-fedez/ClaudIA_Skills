@@ -229,17 +229,21 @@ response = client.messages.create(
 
 ## Built-in Skills Documentation
 
-ClaudIA leverages Claude Code's **native tools** without requiring third-party APIs. Each skill is documented in `docs/skills/`:
+ClaudIA leverages Claude Code's **native tools** without requiring third-party APIs.
+Los skills son **instalables** (formato Claude Code / Agent Skills): cada uno vive en
+`docs/skills/<nombre>/SKILL.md` con frontmatter YAML (`name` + `description`).
 
-| Skill | File | Descripción |
-|-------|------|-------------|
-| Web Research | `docs/skills/web-research.md` | Búsqueda web + extracción de contenido de URLs |
-| File Operations | `docs/skills/file-ops.md` | Leer, escribir, editar, buscar archivos |
-| Code Execution | `docs/skills/code-execution.md` | Scripts Python, automatizaciones shell |
-| Content Creation | `docs/skills/content-creation.md` | Propuestas, emails, posts, materiales de curso |
-| Data Analysis | `docs/skills/data-analysis.md` | Análisis de CSV/JSON, informes ejecutivos |
-| Agent Orchestration | `docs/skills/agent-orchestration.md` | Sub-agentes paralelos para tareas complejas |
-| Git Operations | `docs/skills/git-operations.md` | Versionado documental, historial, recuperación |
+👉 **Catálogo completo (18 skills) con resúmenes:** [`docs/skills/README.md`](docs/skills/README.md)
+
+Familias por namespace:
+
+| Namespace | Dominio | Skills |
+|-----------|---------|--------|
+| `comms-` | Comunicación | content-creation, email-triage, html-presentation, outlook-email |
+| `dev-` | Desarrollo y sistema | agent-orchestration, code-execution, file-ops, git-operations |
+| `ops-` | Operaciones y negocio | calendar, ceo-menu, publish-content |
+| `research-` | Investigación | data-analysis, notebooklm, web-research |
+| `seo-` | SEO y contenido web | full-pipeline, keyword-research, post-writing, wordpress-publish |
 
 ## CEO Task Menu
 

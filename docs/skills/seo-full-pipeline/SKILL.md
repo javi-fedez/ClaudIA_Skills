@@ -1,3 +1,8 @@
+---
+name: seo-full-pipeline
+description: Ejecuta el pipeline SEO completo: keyword research, redacción del post y subida como borrador a WordPress. Úsalo para crear y publicar un post SEO de principio a fin.
+---
+
 # Skill: SEO Full Pipeline
 
 Ejecuta el pipeline SEO completo de principio a fin: investiga keywords, redacta el post optimizado y lo sube como borrador a WordPress. Todo en un solo comando.

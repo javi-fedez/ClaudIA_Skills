@@ -1,6 +1,21 @@
+---
+name: dev-file-ops
+description: Lee, escribe, edita y busca archivos en el sistema local. Úsalo para cualquier manipulación de archivos.
+---
+
 # Skill: Operaciones de Archivos
 
 Capacidad nativa de ClaudIA para leer, escribir, editar y buscar archivos en el sistema local.
+
+---
+
+## Trigger phrases
+- "lee el archivo [ruta]"
+- "crea un documento con [contenido]"
+- "actualiza [archivo] con [datos]"
+- "busca todos los archivos de [cliente/tema]"
+- "encuentra dónde se menciona [texto]"
+- "/file-ops"
 
 ---
 
@@ -107,3 +122,10 @@ Tengo una carpeta en /negocio/propuestas/. Lee todas las propuestas del
 último trimestre, identifica cuál fue el precio medio ofertado y qué
 servicios se incluyeron con más frecuencia. Dame un resumen en tabla.
 ```
+
+---
+
+## Notas de seguridad
+- `Write` sobre un archivo existente lo **sobrescribe por completo** — usar `Edit` para cambios parciales.
+- Antes de sobrescribir o borrar, leer primero el archivo para confirmar su contenido.
+- Nunca escribir secretos (claves, contraseñas) en archivos versionados; usar `.env`.

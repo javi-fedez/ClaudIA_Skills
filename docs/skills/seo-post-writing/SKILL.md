@@ -1,3 +1,8 @@
+---
+name: seo-post-writing
+description: Redacta un post de blog optimizado para SEO a partir de un brief, con metadatos. Úsalo para escribir el contenido del artículo.
+---
+
 # Skill: SEO Post Writing
 
 Redacta un post de blog completamente optimizado para SEO a partir de un brief, usando la voz y estilo de la marca.
@@ -15,7 +20,7 @@ Redacta un post de blog completamente optimizado para SEO a partir de un brief, 
 Leer `docs/perfil-empresa.md` y extraer antes de escribir:
 - Tono y voz (sección 9) — frases cortas, tuteo, experiencia real
 - ICP (sección 7) — para quién escribes
-- Pain points (sección 8) — qué problemas resuelve Javi
+- Pain points (sección 8) — qué problemas resuelve la marca
 - Sitio destino — sitio-1.example.com o sitio-2.example.com
 - CTA habituales (sección 9)
 
@@ -75,7 +80,7 @@ Imagen destacada alt text: [descripción con keyword]
 
 **INTRODUCCIÓN (150-200 palabras)**
 - Gancho en la primera línea — pregunta, dato impactante o situación reconocible
-- Identificar el problema del lector (pain point del ICP de Javi)
+- Identificar el problema del lector (pain point del ICP de la marca)
 - Prometer qué va a aprender/conseguir al leer el artículo
 - Incluir keyword principal de forma natural en los primeros 100 palabras
 
@@ -86,13 +91,13 @@ Reglas de redacción:
 - Incluir keyword principal 1 vez por cada 500 palabras (aprox.)
 - Keywords secundarias distribuidas naturalmente en H2/H3 y cuerpo
 - Usar listas con viñetas o numeradas donde aporte claridad
-- Incluir al menos 1 ejemplo real o caso práctico (puede ser ficticio pero verosímil, basado en la experiencia de Javi formando empresas)
+- Incluir al menos 1 ejemplo real o caso práctico (puede ser ficticio pero verosímil, basado en la experiencia de la marca formando empresas)
 - Datos y cifras siempre que refuercen el argumento (usar los de `perfil-empresa.md` sección 12 si aplican)
 - Negritas para destacar conceptos clave (no abusar — máximo 1-2 por párrafo)
 
 **CONCLUSIÓN + CTA (100-150 palabras)**
 - Resumir el aprendizaje principal en 2-3 frases
-- CTA claro y directo usando uno de los habituales de Javi:
+- CTA claro y directo usando uno de los habituales de la marca:
   - Para sitio-1.example.com: suscripción al blog / newsletter
   - Para sitio-2.example.com: "Solicita tu diagnóstico inicial gratuito" / "Escríbeme a hola@sitio-2.example.com"
 
@@ -145,5 +150,5 @@ El post completo listo para copiar/pegar o pasar a la skill `seo-wordpress-publi
 ## Notas
 - Si el usuario pide un post largo (+2.000 palabras), ofrecer dividirlo en una serie de 2-3 posts interconectados
 - No inventar estadísticas — usar datos reales de `perfil-empresa.md` o buscarlos con WebSearch
-- El ángulo diferencial de Javi: siempre anclar el contenido en la experiencia real formando empresas
+- El ángulo diferencial de la marca: siempre anclar el contenido en la experiencia real formando empresas
 - Para sitio-2.example.com: el tono puede ser ligeramente más corporativo pero sin perder cercanía

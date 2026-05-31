@@ -1,6 +1,21 @@
+---
+name: dev-git-operations
+description: Gestiona el historial de documentos, cambios y trazabilidad con git. Úsalo para versionar documentación y recuperar versiones anteriores.
+---
+
 # Skill: Operaciones Git y Control de Versiones
 
 Capacidad de ClaudIA para gestionar el historial de documentos, colaborar en cambios y mantener trazabilidad de toda la documentación de la empresa.
+
+---
+
+## Trigger phrases
+- "guarda los cambios en git"
+- "qué cambió esta semana / este mes"
+- "recupera la versión anterior de [archivo]"
+- "crea una rama para [proyecto/cliente]"
+- "muéstrame el historial de [documento]"
+- "/git-operations"
 
 ---
 
@@ -91,3 +106,10 @@ Dime qué materiales se han actualizado, cuáles no se tocan desde
 hace más de 6 meses (posible contenido obsoleto) y genera un
 informe de "estado de los materiales" en /informes/materiales_estado.md
 ```
+
+---
+
+## Notas de seguridad
+- Operaciones destructivas (`git reset --hard`, `push --force`, `git clean`) requieren confirmación explícita del usuario.
+- Nunca commitear `.env`, credenciales ni datos personales de clientes.
+- Antes de un `merge` a `main`, confirmar que el contenido está aprobado.

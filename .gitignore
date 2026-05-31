@@ -1,0 +1,40 @@
+# === Secretos y configuración local (NUNCA committear) ===
+.env
+.env.local
+.env.*.local
+.env.real
+valores-reales.env
+*.pem
+*.key
+token-cache.json
+storage_state.json
+
+# === Perfil de empresa / datos de negocio (privados) ===
+docs/perfil-empresa.md
+docs/clientes/
+docs/finanzas/
+docs/cursos/
+
+# === Salidas generadas / contenido publicado ===
+docs/output/
+docs/public/
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# === Sistema / editor ===
+.DS_Store
+.idea/
+.vscode/
+*.swp

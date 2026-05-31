@@ -1,3 +1,8 @@
+---
+name: ops-ceo-menu
+description: Panel de 20 tareas autónomas listas para el CEO de una empresa pequeña de formación (comercial, marketing, operaciones, finanzas, estrategia). Úsalo como menú de tareas de gestión de negocio.
+---
+
 # ClaudIA — Menú CEO: Empresa de Formación
 
 Panel de tareas autónomas para el CEO de una empresa de formación pequeña.

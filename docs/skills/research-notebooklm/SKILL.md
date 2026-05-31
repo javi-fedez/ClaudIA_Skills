@@ -1,3 +1,8 @@
+---
+name: research-notebooklm
+description: Conecta con Google NotebookLM de forma programática para crear y consultar notebooks y generar contenido. Úsalo para tareas de research basadas en NotebookLM.
+---
+
 # Skill: NotebookLM — Consultas, Generación de Contenido y Automatización
 
 Skill completo para conectarse a Google NotebookLM de forma programática usando
@@ -250,7 +255,7 @@ import asyncio
 from claudia.config import OUTPUT_DIR
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 asyncio.run(generar_infografia(
-    "REDACTED_NOTEBOOK_ID",
+    "TU_NOTEBOOK_ID",
     str(OUTPUT_DIR / "20260315_mi-infografia.png")
 ))
 ```
@@ -433,7 +438,7 @@ async def main(notebook_id: str, pregunta: str, tema_infografia: str):
         print(f"Infografía guardada: {out}")
 
 asyncio.run(main(
-    notebook_id="REDACTED_NOTEBOOK_ID",
+    notebook_id="TU_NOTEBOOK_ID",
     pregunta="¿Cuáles son los factores clave de adopción de IA en empresas?",
     tema_infografia="Adopción IA Generativa en Empresas"
 ))

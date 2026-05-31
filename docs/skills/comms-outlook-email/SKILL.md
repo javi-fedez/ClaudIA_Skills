@@ -1,3 +1,8 @@
+---
+name: comms-outlook-email
+description: Consulta, busca, lee, responde y envía correos vía el servidor MCP de Outlook 365 (Microsoft Graph). Úsalo para gestionar el email de Outlook/M365. Nunca envía sin confirmación explícita del usuario.
+---
+
 # Skill: Gestión de Correo Outlook (MCP)
 
 Skill completo para consultar, buscar, leer, contestar y enviar correos electrónicos
@@ -173,7 +178,7 @@ outlook_send_email(
 
 ## Workflow completo: Tareas pendientes del correo
 
-Este es el flujo para obtener tareas pendientes a partir del correo (como en el ejemplo del 14/03/2026):
+Este es el flujo para obtener tareas pendientes a partir del correo:
 
 ### Paso 1 — Obtener correos recientes (leídos + no leídos)
 
@@ -211,7 +216,7 @@ Para cada correo relevante, determinar:
 - **¿Qué información falta?** (precio, fecha, datos de facturación)
 - **¿Tiene urgencia?** (mención de plazo, correo sin leer, seguimiento sin respuesta)
 
-### Paso 4 — Presentar las 9 más importantes
+### Paso 4 — Presentar las más importantes
 
 Ordenar por prioridad (importancia + urgencia + valor económico) y presentar en tabla:
 

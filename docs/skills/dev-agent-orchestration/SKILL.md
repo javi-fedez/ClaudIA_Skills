@@ -1,6 +1,20 @@
+---
+name: dev-agent-orchestration
+description: Lanza sub-agentes especializados en paralelo, delega tareas complejas y combina sus resultados. Úsalo para descomponer tareas grandes que conviene paralelizar.
+---
+
 # Skill: Orquestación de Agentes
 
 Capacidad de ClaudIA para lanzar **sub-agentes especializados en paralelo**, delegar tareas complejas y combinar sus resultados — todo sin APIs externas.
+
+---
+
+## Trigger phrases
+- "lanza agentes en paralelo para [tareas]"
+- "investiga a la vez [tema A], [tema B] y [tema C]"
+- "delega esto en sub-agentes"
+- "descompón esta tarea y paralelízala"
+- "/agent-orchestration"
 
 ---
 
@@ -106,3 +120,10 @@ Quiero preparar la estrategia comercial de Q2. Lanza agentes en paralelo para:
 
 Combina los resultados en un plan de acción de Q2 con prioridades claras.
 ```
+
+---
+
+## Notas de seguridad
+- Cada sub-agente recibe solo el contexto que necesita — no compartir secretos ni datos sensibles innecesarios.
+- Delegar **tareas de solo lectura/investigación** en paralelo; las acciones con efectos (enviar, publicar, borrar) deben pasar por el agente principal con confirmación del usuario.
+- Definir siempre un objetivo y formato de salida claros para evitar resultados divergentes.

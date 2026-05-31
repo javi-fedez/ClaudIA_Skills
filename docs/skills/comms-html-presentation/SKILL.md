@@ -1,3 +1,8 @@
+---
+name: comms-html-presentation
+description: Genera presentaciones interactivas en formato .html con CSS y JavaScript integrados. Úsalo cuando se pida una presentación, slides o documento visual en HTML.
+---
+
 # Skill: Presentaciones HTML (estilo PowerPoint)
 
 Genera presentaciones interactivas en formato `.html` con CSS y JavaScript integrados.

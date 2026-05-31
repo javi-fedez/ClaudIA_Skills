@@ -3,24 +3,28 @@
 Publica archivos generados (HTML, PDF, imágenes, docs) en el servidor nginx del VPS
 y devuelve una URL pública accesible desde cualquier navegador.
 
+> **Nota:** los valores reales (dominio, token de acceso, contenedor) se cargan
+> desde `.env`. En esta documentación se usan los placeholders `${FILES_DOMAIN}`,
+> `${FILES_TOKEN_PATH}` y `${FILES_CONTAINER}` definidos en `.env.example`.
+
 ---
 
 ## Infraestructura del servidor de archivos
 
 | Elemento | Valor |
 |----------|-------|
-| Dominio | `files.example.com` |
+| Dominio | `${FILES_DOMAIN}` |
 | Protocolo | HTTPS (certificado Let's Encrypt via Traefik) |
-| Contenedor | `files-server` (nginx:alpine) |
+| Contenedor | `${FILES_CONTAINER}` (nginx:alpine) |
 | Directorio VPS | `/workspace/ClaudIA_Agent/docs/public/` |
-| Path URL protegido | `/REDACTED_FILES_TOKEN/` |
+| Path URL protegido | `/${FILES_TOKEN_PATH}/` |
 | Acceso sin token | HTTP 403 — bloqueado |
-| Config nginx | `/root/nginx-files.conf` |
-| Compose file | `/root/docker-compose.files.yml` |
+| Config nginx | `nginx-files.conf` |
+| Compose file | `docker-compose.files.yml` |
 
 **Patrón de URL resultante:**
 ```
-https://files.example.com/REDACTED_FILES_TOKEN/<nombre-del-archivo>
+https://${FILES_DOMAIN}/${FILES_TOKEN_PATH}/<nombre-del-archivo>
 ```
 
 ---
@@ -54,14 +58,14 @@ cp /workspace/ClaudIA_Agent/docs/output/<nombre-del-archivo> \
 ```
 
 El contenedor Docker monta `/workspace/ClaudIA_Agent/docs/public/` en
-`/usr/share/nginx/html/REDACTED_FILES_TOKEN/`, por lo que el archivo
+`/usr/share/nginx/html/${FILES_TOKEN_PATH}/`, por lo que el archivo
 queda disponible de forma inmediata sin reiniciar ningún servicio.
 
 ### Paso 3 — Verificar accesibilidad
 
 ```bash
 curl -sk -o /dev/null -w "%{http_code}" \
-  "https://files.example.com/REDACTED_FILES_TOKEN/<nombre-del-archivo>"
+  "https://${FILES_DOMAIN}/${FILES_TOKEN_PATH}/<nombre-del-archivo>"
 ```
 
 Respuesta esperada: `200`. Si devuelve otro código:
@@ -70,14 +74,14 @@ Respuesta esperada: `200`. Si devuelve otro código:
 |--------|-------|----------|
 | `403` | Path incorrecto o acceso a `/` | Verificar que la URL incluye el token completo |
 | `404` | Archivo no copiado o nombre incorrecto | Verificar `ls /workspace/ClaudIA_Agent/docs/public/` |
-| `000` | Docker caído | `docker ps` y comprobar `files-server` |
+| `000` | Docker caído | `docker ps` y comprobar `${FILES_CONTAINER}` |
 
 ### Paso 4 — Devolver la URL al usuario
 
 Formato de respuesta:
 
 ```
-https://files.example.com/REDACTED_FILES_TOKEN/<nombre-del-archivo>
+https://${FILES_DOMAIN}/${FILES_TOKEN_PATH}/<nombre-del-archivo>
 ```
 
 ---
@@ -86,18 +90,18 @@ https://files.example.com/REDACTED_FILES_TOKEN/<nombre-del-archivo>
 
 ```bash
 # 1. El archivo ya existe en docs/output/
-ls /workspace/ClaudIA_Agent/docs/output/20260316_framework-consultoria-cliente-ejemplo.html
+ls /workspace/ClaudIA_Agent/docs/output/20260316_ejemplo-presentacion.html
 
 # 2. Copiar al directorio público
-cp /workspace/ClaudIA_Agent/docs/output/20260316_framework-consultoria-cliente-ejemplo.html \
+cp /workspace/ClaudIA_Agent/docs/output/20260316_ejemplo-presentacion.html \
    /workspace/ClaudIA_Agent/docs/public/
 
 # 3. Verificar HTTP 200
 curl -sk -o /dev/null -w "%{http_code}" \
-  "https://files.example.com/REDACTED_FILES_TOKEN/20260316_framework-consultoria-cliente-ejemplo.html"
+  "https://${FILES_DOMAIN}/${FILES_TOKEN_PATH}/20260316_ejemplo-presentacion.html"
 
 # 4. URL resultante:
-# https://files.example.com/REDACTED_FILES_TOKEN/20260316_framework-consultoria-cliente-ejemplo.html
+# https://${FILES_DOMAIN}/${FILES_TOKEN_PATH}/20260316_ejemplo-presentacion.html
 ```
 
 ---
@@ -111,7 +115,7 @@ ls -lh /workspace/ClaudIA_Agent/docs/public/
 O acceder al índice web (autoindex activado):
 
 ```
-https://files.example.com/REDACTED_FILES_TOKEN/
+https://${FILES_DOMAIN}/${FILES_TOKEN_PATH}/
 ```
 
 ---
@@ -137,7 +141,7 @@ Ejemplo de cuerpo de email:
 ```
 Aquí tienes el archivo listo para abrir en el navegador:
 
-https://files.example.com/REDACTED_FILES_TOKEN/<nombre-del-archivo>
+https://${FILES_DOMAIN}/${FILES_TOKEN_PATH}/<nombre-del-archivo>
 ```
 
 **Por qué este flujo:** el MCP de Outlook no soporta adjuntos. Publicar primero
@@ -147,7 +151,9 @@ y enviar el enlace es siempre más útil que intentar incluir el archivo en el c
 
 ## Notas de seguridad
 
-- El path `/REDACTED_FILES_TOKEN/` actúa como token de acceso — no publicar esta URL en repositorios públicos ni documentos compartidos abiertamente.
+- El path `/${FILES_TOKEN_PATH}/` actúa como token de acceso — es la única
+  protección del servidor. Mantenerlo en `.env` y NUNCA exponerlo en repos
+  públicos ni documentos compartidos abiertamente.
 - Cualquier archivo copiado a `docs/public/` es accesible para quien tenga la URL.
 - No existe autenticación adicional — el token en el path es la única protección.
 - Si se necesita eliminar el acceso a un archivo, borrarlo con `rm`.

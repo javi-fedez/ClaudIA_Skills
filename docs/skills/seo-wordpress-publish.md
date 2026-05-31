@@ -15,12 +15,12 @@ Publica un post como borrador en WordPress via REST API, con todos los metadatos
 1. Leer `docs/perfil-empresa.md` sección 14 para obtener las URLs de la API
 2. Las credenciales van en `.env` — NUNCA en este archivo:
    ```
-   WP_JF_URL=https://sitio-1.example.com
-   WP_JF_USER=tu_usuario
-   WP_JF_PASSWORD=tu_application_password   # WP Application Password
-   WP_AU_URL=https://sitio-2.example.com
-   WP_AU_USER=tu_usuario
-   WP_AU_PASSWORD=tu_application_password
+   WP_SITE1_URL=https://tu-sitio-1.example.com
+   WP_SITE1_USER=tu_usuario
+   WP_SITE1_PASSWORD=tu_application_password   # WP Application Password
+   WP_SITE2_URL=https://tu-sitio-2.example.com
+   WP_SITE2_USER=tu_usuario
+   WP_SITE2_PASSWORD=tu_application_password
    ```
    Los Application Passwords se generan en: WP Admin → Usuarios → Tu perfil → Application Passwords
 
@@ -31,7 +31,7 @@ Publica un post como borrador en WordPress via REST API, con todos los metadatos
 ### Paso 1 — Confirmar sitio destino
 
 Preguntar al usuario si no está claro:
-- ¿Publicar en **sitio-1.example.com** o **sitio-2.example.com**?
+- ¿Publicar en **sitio 1** (`$WP_SITE1_URL`) o **sitio 2** (`$WP_SITE2_URL`)?
 
 Cargar la configuración correspondiente del `.env`.
 
@@ -139,7 +139,7 @@ Entregar al usuario un resumen de confirmación:
 ```
 ## Draft creado en WordPress
 
-Sitio:      [sitio-1.example.com / sitio-2.example.com]
+Sitio:      [sitio 1 / sitio 2]
 Post ID:    [ID]
 Título:     [Título]
 Slug:       /[slug]/

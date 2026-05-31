@@ -37,7 +37,7 @@ El servidor MCP expone **6 herramientas** vía `mcp-servers/calendar/`:
 
 ---
 
-## Calendarios del usuario (hola@sitio-1.example.com)
+## Calendarios del usuario (cuenta Microsoft 365 del usuario)
 
 | Nombre | ID | Editable |
 |--------|----|----------|

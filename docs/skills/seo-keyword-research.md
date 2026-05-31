@@ -41,7 +41,7 @@ A partir del tema, generar una lista inicial de 20-30 keywords semilla agrupadas
 - Localización: "... para empresas", "... en España", "... para PYMEs"
 
 **D) Long tail** (3-5 palabras, menor competencia)
-- Combinaciones específicas del ICP de Javi
+- Combinaciones específicas del ICP de la marca
 
 ### Paso 3 — Investigar métricas (búsqueda web)
 Para las 10-15 keywords más prometedoras, usar WebSearch para:
@@ -97,7 +97,7 @@ Entregar un brief estructurado listo para la skill `seo-post-writing`:
 ### Formato recomendado: [Guía / Listicle / Tutorial / Comparativa]
 
 ### Notas adicionales para el redactor
-[Observaciones sobre tono, datos a incluir, ángulo diferencial de Javi]
+[Observaciones sobre tono, datos a incluir, ángulo diferencial de la marca]
 ```
 
 ---
@@ -106,4 +106,4 @@ Entregar un brief estructurado listo para la skill `seo-post-writing`:
 - Priorizar keywords con intención comercial para sitio-2.example.com (más cerca de la conversión)
 - Priorizar keywords informacionales para sitio-1.example.com (captación de audiencia y newsletter)
 - Nunca proponer keywords ya cubiertas en posts existentes (verificar en el perfil sección 10 si está actualizada)
-- El ángulo diferencial de Javi siempre es: experiencia real formando empresas, resultados medibles, seguridad Microsoft vs IA gratuita
+- El ángulo diferencial de la marca siempre es: experiencia real formando empresas, resultados medibles, seguridad Microsoft vs IA gratuita

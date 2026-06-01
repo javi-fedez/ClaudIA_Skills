@@ -4,6 +4,7 @@
 .env.*.local
 .env.real
 valores-reales.env
+MAPA-ANONIMIZACION.md
 *.pem
 *.key
 token-cache.json

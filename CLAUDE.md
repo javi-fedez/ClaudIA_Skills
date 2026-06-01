@@ -233,23 +233,26 @@ ClaudIA leverages Claude Code's **native tools** without requiring third-party A
 Los skills son **instalables** (formato Claude Code / Agent Skills): cada uno vive en
 `docs/skills/<nombre>/SKILL.md` con frontmatter YAML (`name` + `description`).
 
-👉 **Catálogo completo (18 skills) con resúmenes:** [`docs/skills/README.md`](docs/skills/README.md)
+👉 **Catálogo completo (37 skills) con resúmenes:** [`docs/skills/README.md`](docs/skills/README.md)
 
 Familias por namespace:
 
 | Namespace | Dominio | Skills |
 |-----------|---------|--------|
-| `comms-` | Comunicación | content-creation, email-triage, html-presentation, outlook-email |
-| `dev-` | Desarrollo y sistema | agent-orchestration, code-execution, file-ops, git-operations |
-| `ops-` | Operaciones y negocio | calendar, ceo-menu, publish-content |
+| `comms-` | Comunicación | content-creation, email-triage, html-presentation, outlook-email, marca-a-document, marca-a-slides, marca-a-video |
+| `dev-` | Desarrollo y sistema | agent-orchestration, code-execution, file-ops, git-operations, remotion-video, scripts-catalog, subagents-catalog |
+| `ops-` / `infra-` | Operaciones e infraestructura | calendar, ceo-menu, publish-content, hostinger, hooks-and-logging, telegram-bot |
 | `research-` | Investigación | data-analysis, notebooklm, web-research |
-| `seo-` | SEO y contenido web | full-pipeline, keyword-research, post-writing, wordpress-publish |
+| `seo-` | SEO y contenido web | full-pipeline, keyword-research, post-writing, wordpress-publish, agentic-audit |
+| Integraciones | CRM / ERP / backend | crm-highlevel, holded, supabase |
+| Producción / utilidades | Contenido y herramientas | content-pipeline, crear-imagenes-gpt2, hyperframes-brands, tool-generar-pdf, youtube-research |
+| Referencia | Índices y catálogos | skills-index |
 
 ## CEO Task Menu
 
 For autonomous business operation tasks targeted at a small training/education company CEO, see:
 
-**`docs/ceo-menu.md`** — 20 ready-to-use task prompts covering:
+**`docs/skills/ops-ceo-menu/SKILL.md`** — 20 ready-to-use task prompts covering:
 - Commercial & Sales (propuestas, pipeline, análisis)
 - Marketing & Communication (calendario editorial, newsletters, LinkedIn)
 - Operations & Management (informes, OKRs, onboarding)

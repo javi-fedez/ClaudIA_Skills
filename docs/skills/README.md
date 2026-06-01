@@ -1,173 +1,105 @@
-# Archive Skills — Directorio de referencia
+# ClaudIA — Catálogo de Skills
 
-Este directorio contiene **37 skills reutilizables** archivados en un solo lugar para reducir la carga de contexto cuando trabajas en la carpeta raíz de ClaudIA.
+Skills instalables para ClaudIA (formato Claude Code / Agent Skills). Cada skill vive
+en su propia carpeta con un fichero `SKILL.md` que incluye frontmatter YAML
+(`name` + `description`) y la documentación de uso.
 
----
+**Instalación:** copia la carpeta del skill a tu directorio de skills
+(`~/.claude/skills/<nombre>/` global, o `.claude/skills/<nombre>/` del proyecto).
+Claude lo carga automáticamente y lo invoca cuando la tarea coincide con su `description`.
 
-## 📋 Índice de skills
-
-Ver `SKILLS-INDEX.md` para descripción completa de todos los skills:
-
-```bash
-cat SKILLS-INDEX.md
-```
-
-Resumen rápido por dominio:
-- **`dev-*`** (7) — Ingeniería: agentes, code, git, scripts
-- **`research-*`** (4) — Investigación: web, data, NotebookLM, YouTube
-- **`comms-*`** (6) — Comunicación: email, content, presentations, Marca A
-- **`ops-*`** (4) — Operaciones: CEO menu, calendar, publish, Hostinger
-- **`crm-*`** (1) — CRM: GoHighLevel
-- **`holded`** (1) — ERP: Facturas y contabilidad
-- **`content-pipeline`** (1) — End-to-end: research → publish → email
-- **`infra-*`** (2) — Infraestructura: Telegram bot, hooks & logging
-- **`supabase`** (1) — Backend: Postgres, migraciones, edge functions
-- **`hyperframes-brands`** (1) — Vídeo: inyección de marca
-- **`seo-*`** (4) — SEO: keywords, posts, WordPress, pipeline
-- **`tool-generar-pdf`** (1) — Utilidad: HTML → PDF
-- **Global skills** (14) — HyperFrames (12) + SEO (1) + video-use (1)
+> Las credenciales y valores reales se cargan desde `.env` (ver `.env.example` en la raíz).
+> Ningún skill contiene secretos ni datos reales — los dominios, marcas y tokens están anonimizados.
 
 ---
 
-## ⚡ Cómo usar estos skills
+## 💬 Comunicación (`comms-`)
 
-### Opción 1: Copiar a `~/.claude/skills/` (instalación global)
+| Skill | Carpeta | Resumen |
+|-------|---------|---------|
+| `comms-content-creation` | `comms-content-creation/` | Redacta y estructura documentos profesionales (propuestas, emails, posts, materiales de curso)  |
+| `comms-email-triage` | `comms-email-triage/` | Lee correos no leídos, filtra publicidad y newsletters, y genera borradores de respuesta solo  |
+| `comms-html-presentation` | `comms-html-presentation/` | Genera presentaciones interactivas en formato .html con CSS y JavaScript integrados. |
+| `comms-marca-a-document` | `comms-marca-a-document/` | Crea documentos web largos tipo briefing/whitepaper/dossier scrolleable con identidad de marca  |
+| `comms-marca-a-slides` | `comms-marca-a-slides/` | Crea presentaciones web one-page con navegación tipo diapositiva (← → · Espacio · F pant |
+| `comms-marca-a-video` | `comms-marca-a-video/` | Edita videos para marca-a.example.com (reels, tutoriales, minilecciones del programa "21 días  |
+| `comms-outlook-email` | `comms-outlook-email/` | Consulta, busca, lee, responde y envía correos vía el servidor MCP de Outlook 365 (Microsoft  |
 
-Para usar los skills en cualquier proyecto Claude Code:
+## 🛠️ Desarrollo y sistema (`dev-`)
 
-```bash
-# Una sola vez — copia todos los skills
-cp archive-skills/*.md ~/.claude/skills/
+| Skill | Carpeta | Resumen |
+|-------|---------|---------|
+| `dev-agent-orchestration` | `dev-agent-orchestration/` | Lanza sub-agentes especializados en paralelo, delega tareas complejas y combina sus resultados. |
+| `dev-code-execution` | `dev-code-execution/` | Ejecuta comandos de shell, scripts Python y automatiza tareas del sistema operativo. |
+| `dev-file-ops` | `dev-file-ops/` | Lee, escribe, edita y busca archivos en el sistema local. |
+| `dev-git-operations` | `dev-git-operations/` | Gestiona el historial de documentos, cambios y trazabilidad con git. |
+| `dev-remotion-video` | `dev-remotion-video/` | Diseña, escribe y renderiza vídeos programáticos con Remotion (React/TypeScript), con búsqu |
+| `dev-scripts-catalog` | `dev-scripts-catalog/` | Inventario de referencia de los scripts Python del proyecto y cómo invocarlos. |
+| `dev-subagents-catalog` | `dev-subagents-catalog/` | Inventario de referencia de los sub-agentes disponibles y cuándo delegarles trabajo. |
 
-# Luego en cualquier proyecto, invoca:
-/dev-code-execution
-/comms-email-triage
-/seo-full-pipeline
-# etc.
-```
+## ⚙️ Operaciones e infraestructura (`ops-`, `infra-`)
 
-### Opción 2: Usar desde ClaudIA_Agent (local)
+| Skill | Carpeta | Resumen |
+|-------|---------|---------|
+| `infra-hooks-and-logging` | `infra-hooks-and-logging/` | Documentación del sistema de hooks de Claude Code que registra toda interacción y el cierre d |
+| `infra-telegram-bot` | `infra-telegram-bot/` | Documentación de referencia del bot de Telegram que conecta con Claude Code en el VPS. |
+| `ops-calendar` | `ops-calendar/` | Consulta, crea, modifica y elimina eventos del calendario (Outlook/M365). |
+| `ops-ceo-menu` | `ops-ceo-menu/` | Panel de 20 tareas autónomas listas para el CEO de una empresa pequeña de formación (comerci |
+| `ops-hostinger` | `ops-hostinger/` | Administra el VPS de Hostinger vía MCP hostinger (snapshots, servicios, despliegues). |
+| `ops-publish-content` | `ops-publish-content/` | Publica archivos generados (HTML, PDF, imágenes, docs) en el servidor nginx y devuelve una URL |
 
-Si estás dentro de `/workspace/ClaudIA_Agent/`:
+## 🔎 Investigación (`research-`)
 
-```bash
-# Los skills se encuentran en archive-skills/
-# Invoca dentro de Claude Code:
-/dev-code-execution
+| Skill | Carpeta | Resumen |
+|-------|---------|---------|
+| `research-data-analysis` | `research-data-analysis/` | Lee, procesa e interpreta datos de negocio (CSV/JSON) usando Python nativo. |
+| `research-notebooklm` | `research-notebooklm/` | Conecta con Google NotebookLM de forma programática para crear y consultar notebooks y generar |
+| `research-web-research` | `research-web-research/` | Busca en internet y extrae información de páginas web sin APIs de terceros. |
 
-# O refiérete explícitamente:
-cat archive-skills/dev-code-execution.md
-```
+## 📈 SEO y contenido web (`seo-`)
 
-### Opción 3: Incluir en tus CLAUDE.md (custom)
+| Skill | Carpeta | Resumen |
+|-------|---------|---------|
+| `seo-agentic-audit` | `seo-agentic-audit/` | Realiza auditorías SEO deterministas y LLM-first sobre webs, posts y repos GitHub, con sub-ski |
+| `seo-full-pipeline` | `seo-full-pipeline/` | Ejecuta el pipeline SEO completo: keyword research, redacción del post y subida como borrador  |
+| `seo-keyword-research` | `seo-keyword-research/` | Investiga y prioriza palabras clave para un tema y sitio destino. |
+| `seo-post-writing` | `seo-post-writing/` | Redacta un post de blog optimizado para SEO a partir de un brief, con metadatos. |
+| `seo-wordpress-publish` | `seo-wordpress-publish/` | Publica un post como borrador en WordPress vía REST API con todos los metadatos SEO. |
 
-Si tienes otro proyecto con su propio `CLAUDE.md`:
+## 🔌 Integraciones de negocio (CRM, ERP, backend)
 
-```markdown
-# CLAUDE.md — Mi Proyecto
+| Skill | Carpeta | Resumen |
+|-------|---------|---------|
+| `crm-highlevel` | `crm-highlevel/` | Gestiona el CRM de GoHighLevel (Lead Connector) vía el MCP lead-connector: contactos, oportuni |
+| `holded` | `holded/` | Gestiona contactos, documentos, facturación y CRM en Holded (ERP) vía MCP y API REST directa, |
+| `supabase` | `supabase/` | Gestiona todos los proyectos Supabase del usuario (Postgres, Auth, Storage, Edge Functions, Rea |
 
-Para skills reutilizables, referencia:
-- `/workspace/ClaudIA_Agent/archive-skills/` — 33 skills de ClaudIA
+## 🎬 Producción de contenido y utilidades
 
-Copía la que necesites:
-```bash
-cp /workspace/ClaudIA_Agent/archive-skills/dev-code-execution.md ~/mi-proyecto/.claude/skills/
-```
-```
+| Skill | Carpeta | Resumen |
+|-------|---------|---------|
+| `content-pipeline` | `content-pipeline/` | Pipeline autónomo de producción de contenido de extremo a extremo: investiga un tema, genera  |
+| `crear-imagenes-gpt2` | `crear-imagenes-gpt2/` | Genera imágenes con la API de OpenAI (gpt-image) para presentaciones, banners, ilustraciones w |
+| `hyperframes-brands` | `hyperframes-brands/` | Apply per-brand design specs (Marca B, Marca A, Marca C) to HyperFrames video compositions. |
+| `tool-generar-pdf` | `tool-generar-pdf/` | Genera un PDF de alta fidelidad a partir de una URL pública o un archivo HTML local usando Pla |
+| `youtube-research` | `youtube-research/` | Investiga una temática localizando vídeos de YouTube relevantes, analiza su contenido y los d |
 
----
+## 📚 Índices y catálogos de referencia
 
-## 📦 Estructura de cada skill
-
-Cada archivo `.md` tiene:
-
-```markdown
-# Skill: Nombre corto
-
-Descripción breve.
-
----
-
-## Herramientas disponibles
-
-| Herramienta | Función |
-
----
-
-## Cuándo usar
-
-...
-
----
-
-## Ejemplo
-
-```
-```
-
-Todos siguen el mismo patrón para consistencia.
-
----
-
-## 🔧 Mantenimiento
-
-### Actualizar un skill
-
-Si encuentras un bug o mejora:
-
-```bash
-# Edita en ClaudIA_Agent
-vi archive-skills/dev-code-execution.md
-
-# Si copiastes a ~/.claude/skills/, también copia la versión actualizada
-cp archive-skills/dev-code-execution.md ~/.claude/skills/
-```
-
-### Crear un skill nuevo
-
-```bash
-# En archive-skills/, crea:
-cat > archive-skills/my-new-skill.md << 'EOF'
-# Skill: Mi nueva habilidad
-
-Descripción breve.
+| Skill | Carpeta | Resumen |
+|-------|---------|---------|
+| `skills-index` | `skills-index/` | Catálogo índice de todos los skills locales reutilizables, agrupados por dominio. |
 
 ---
 
-## Herramientas disponibles
+**Total: 37 skills** organizados por dominio.
 
-| Herramienta | Función |
-|-------------|---------|
-| Tool A | Descripción |
+## Convenciones
 
----
-
-## Cuándo usar
-
-...
-EOF
-```
-
-Luego actualiza `SKILLS-INDEX.md` con una entrada nueva.
-
----
-
-## 📊 Reducción de contexto lograda
-
-**Antes:** 7,000+ líneas de skills/.md cargadas automáticamente como contexto
-**Ahora:** 37 archivos archivados, solo se cargan cuando se necesitan
-
-**Beneficio:** Reduce errores de "token budget exhausted" cuando trabajas en ClaudIA_Agent
-
----
-
-## 🔗 Referencias
-
-- **CLAUDE.md** — Punto de entrada (lee esto primero)
-- **SYSTEM.md** — Arquitectura, stack, convenciones
-- **OPERATIONS.md** — MCPs, infra, workflows, runbooks
-- **SKILLS-INDEX.md** — Catálogo completo (en este directorio)
-
----
-
-**Última actualización:** 2026-05-12
+- **Acciones irreversibles o salientes** (enviar email, borrar, publicar, migrar BD, cambios en VPS)
+  requieren confirmación explícita del usuario o crean siempre un borrador / snapshot previo.
+- Cada skill es **autónomo**: su `SKILL.md` documenta cuándo usarlo, el flujo y las notas de seguridad.
+- Los skills marcados como *catálogo/índice/referencia* (`skills-index`, `dev-scripts-catalog`,
+  `dev-subagents-catalog`, `infra-*`) documentan componentes pero **no son ejecutables**.
+- Las credenciales de las integraciones (Holded, Supabase, GoHighLevel, OpenAI, Telegram, Hostinger)
+  se leen siempre de `.env`, nunca hardcodeadas.
